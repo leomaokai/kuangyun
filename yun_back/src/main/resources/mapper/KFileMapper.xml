@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kai.kuangyun.mapper.KFileMapper">
+
+    <insert id="insertOne">
+        insert into t_file(username, `type`, `url`, `filename`)
+        values (#{kFile.username}, #{kFile.type}, #{kFile.url}, #{kFile.filename})
+    </insert>
+
+
+    <select id="listVideo" resultType="com.kai.kuangyun.pojo.KFile">
+        select *
+        from t_file
+        where username = #{name}
+    </select>
+    <select id="selectOneVideo" resultType="com.kai.kuangyun.pojo.KFile">
+        select *
+        from t_file
+        where id = #{videoId}
+    </select>
+
+
+</mapper>
